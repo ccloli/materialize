@@ -59,9 +59,11 @@
                   <li><a href="grid.html">Grid</a></li>
                   <li><a href="helpers.html">Helpers</a></li>
                   <li><a href="media-css.html">Media</a></li>
+                  <li><a href="pulse.html">Pulse</a></li>
                   <li><a href="sass.html">Sass</a></li>
                   <li><a href="shadow.html">Shadow</a></li>
                   <li><a href="table.html">Table</a></li>
+                  <li><a href="css-transitions.html">Transitions</a></li>
                   <li><a href="typography.html">Typography</a></li>
                 </ul>
               </div>
@@ -91,6 +93,7 @@
                   <li><a href="collapsible.html">Collapsible</a></li>
                   <li><a href="dialogs.html">Dialogs</a></li>
                   <li><a href="dropdown.html">Dropdown</a></li>
+                  <li><a href="feature-discovery.html">FeatureDiscovery</a></li>
                   <li><a href="media.html">Media</a></li>
                   <li><a href="modals.html">Modals</a></li>
                   <li><a href="parallax.html">Parallax</a></li>
@@ -108,6 +111,7 @@
         </li>
         <li class="bold"><a href="http://materializecss.com/mobile.html" class="waves-effect waves-teal">Mobile</a></li>
         <li class="bold"><a href="showcase.html" class="waves-effect waves-teal">Showcase</a></li>
+        <li class="bold"><a href="themes.html" class="waves-effect waves-teal">Themes</a></li>
       </ul>
     </header>
     <main><div class="container">
@@ -154,6 +158,15 @@
                 <label for="email" data-error="wrong" data-success="right">Email</label>
               </div>
             </div>
+            <div class="row">
+              <div class="col s12">
+                This is an inline input field:
+                <div class="input-field inline">
+                  <input id="email" type="email" class="validate">
+                  <label for="email" data-error="wrong" data-success="right">Email</label>
+                </div>
+              </div>
+            </div>
           </form>
         </div>
         <pre><code class="language-markup">
@@ -185,6 +198,15 @@
         &lt;div class="input-field col s12">
           &lt;input id="email" type="email" class="validate">
           &lt;label for="email">Email&lt;/label>
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="row">
+        &lt;div class="col s12">
+          This is an inline input field:
+          &lt;div class="input-field inline">
+            &lt;input id="email" type="email" class="validate">
+            &lt;label for="email" data-error="wrong" data-success="right">Email&lt;/label>
+          &lt;/div>
         &lt;/div>
       &lt;/div>
     &lt;/form>
@@ -379,7 +401,7 @@
       </div>
       <div id="select" class="section scrollspy">
         <h2 class="header">Select</h2>
-        <p> Select allows user input through specified options. Make sure you wrap it in a <code class="language-markup">.input-field</code> for proper alignment with other text fields.</p>
+        <p> Select allows user input through specified options. Make sure you wrap it in a <code class="language-markup">.input-field</code> for proper alignment with other text fields. Remember that this is a jQuery plugin so make sure you <a href="#select-initialization">initialize</a> this in your document ready. </p>
         <div class="row">
           <form class="col s12">
             <div class="row">
@@ -431,7 +453,7 @@
                   <option value="" disabled selected>Choose your option</option>
                   <option value="" data-icon="images/sample-1.jpg" class="circle">example 1</option>
                   <option value="" data-icon="images/office.jpg" class="circle">example 2</option>
-                  <option value="" data-icon="images/yuna.jpg" class="circle">example 1</option>
+                  <option value="" data-icon="images/yuna.jpg" class="circle">example 3</option>
                 </select>
                 <label>Images in select</label>
               </div>
@@ -500,7 +522,7 @@
       &lt;option value="" disabled selected>Choose your option&lt;/option>
       &lt;option value="" data-icon="images/sample-1.jpg" class="circle">example 1&lt;/option>
       &lt;option value="" data-icon="images/office.jpg" class="circle">example 2&lt;/option>
-      &lt;option value="" data-icon="images/yuna.jpg" class="circle">example 1&lt;/option>
+      &lt;option value="" data-icon="images/yuna.jpg" class="circle">example 3&lt;/option>
     &lt;/select>
     &lt;label>Images in select&lt;/label>
   &lt;/div>
@@ -568,6 +590,7 @@
             </code></pre>
           </div>
           <div class="col s12">
+            <a name="select-initialization"></a>
             <h4>Initialization</h4>
             <p>You must initialize the select element as shown below. In addition, you will need a separate call for any dynamically generated select elements your page generates.</p>
             <pre><code class="language-javascript col s12">
@@ -589,7 +612,8 @@
 
       <div id="radio" class="section scrollspy">
         <h2 class="header">Radio Buttons</h2>
-        <p>Radio Buttons are used when the user must make only one selection out of a group of items</p>
+        <p>Radio Buttons are used when the user must make only one selection out of a group of items. The <code class="language-markup">for</code> attribute is necessary to bind our custom radio button with the input. Add the input's <code class="language-markup">id</code> as the value of the <code class="language-markup">for</code> attribute of the label.</p>
+        <p>Add radio buttons to a group by adding the name attribute along with the same corresponding value for each of the radio  buttons in the group. Create disabled radio buttons by adding the disabled attribute as shown below.</p>
         <form action="#">
           <p>
             <input name="group1" type="radio" id="test1" checked />
@@ -608,7 +632,7 @@
               <label for="test4">Brown</label>
           </p>
         </form>
-        <p>Add radio buttons to a group by adding the name attribute along with the same corresponding value for each of the radio  buttons in the group. Create disabled radio buttons by adding the disabled attribute as shown below.</p>
+        <br>
         <pre><code class="language-markup">
   &lt;form action="#">
     &lt;p>
@@ -623,9 +647,9 @@
       &lt;input class="with-gap" name="group1" type="radio" id="test3"  />
       &lt;label for="test3">Green&lt;/label>
     &lt;/p>
-      &lt;p>
-        &lt;input name="group1" type="radio" id="test4" disabled="disabled" />
-        &lt;label for="test4">Brown&lt;/label>
+    &lt;p>
+      &lt;input name="group1" type="radio" id="test4" disabled="disabled" />
+      &lt;label for="test4">Brown&lt;/label>
     &lt;/p>
   &lt;/form>
         </code></pre>
@@ -698,9 +722,9 @@
       &lt;input type="checkbox" id="test7" checked="checked" disabled="disabled" />
       &lt;label for="test7">Green&lt;/label>
     &lt;/p>
-      &lt;p>
-        &lt;input type="checkbox" id="test8" disabled="disabled" />
-        &lt;label for="test8">Brown&lt;/label>
+    &lt;p>
+      &lt;input type="checkbox" id="test8" disabled="disabled" />
+      &lt;label for="test8">Brown&lt;/label>
     &lt;/p>
   &lt;/form>
         </code></pre>
@@ -875,14 +899,14 @@
           <form class="col s12">
             <div class="row">
               <div class="input-field col s6">
-                <input id="input_text" type="text" length="10">
+                <input id="input_text" type="text" data-length="10">
                 <label for="input_text">Input text</label>
               </div>
             </div>
             <br/>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+                <textarea id="textarea1" class="materialize-textarea" data-length="120"></textarea>
                 <label for="textarea1">Textarea</label>
               </div>
             </div>
@@ -893,13 +917,13 @@
       &lt;form class="col s12">
         &lt;div class="row">
           &lt;div class="input-field col s6">
-            &lt;input id="input_text" type="text" length="10">
+            &lt;input id="input_text" type="text" data-length="10">
             &lt;label for="input_text">Input text&lt;/label>
           &lt;/div>
         &lt;/div>
         &lt;div class="row">
           &lt;div class="input-field col s12">
-            &lt;textarea id="textarea1" class="materialize-textarea" length="120">&lt;/textarea>
+            &lt;textarea id="textarea1" class="materialize-textarea" data-length="120">&lt;/textarea>
             &lt;label for="textarea1">Textarea&lt;/label>
           &lt;/div>
         &lt;/div>
@@ -940,8 +964,8 @@
       &lt;div class="row">
         &lt;div class="input-field col s12">
           &lt;i class="material-icons prefix">textsms&lt;/i>
-          &lt;input type="text" id="autocomplete">
-          &lt;label for="autocomplete">Autocomplete&lt;/label>
+          &lt;input type="text" id="autocomplete-input" class="autocomplete">
+          &lt;label for="autocomplete-input">Autocomplete&lt;/label>
         &lt;/div>
       &lt;/div>
     &lt;/div>
@@ -956,7 +980,12 @@
       "Apple": null,
       "Microsoft": null,
       "Google": 'http://placehold.it/250x250'
-    }
+    },
+    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    onAutocomplete: function(val) {
+      // Callback function when value is autcompleted.
+    },
+    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
   });
         </code></pre>
       </div>
@@ -1023,7 +1052,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-        © 2014-2016 Materialize, All rights reserved.
+        © 2014-2017 Materialize, All rights reserved.
         <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
         </div>
       </div>
